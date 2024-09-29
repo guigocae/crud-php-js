@@ -1,0 +1,27 @@
+{
+  "name": "crud-php",
+  "version": "1.0.0",
+  "description": "a simple crud made by a student",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guigocae/crud-php-js.git"
+  },
+  "keywords": [
+    "crud",
+    "php",
+    "javascript"
+  ],
+  "author": "Guilherme Caetano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guigocae/crud-php-js/issues"
+  },
+  "homepage": "https://github.com/guigocae/crud-php-js#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
