@@ -1,5 +1,9 @@
 <?php 
-//require "./src/pdo_conn.php" ?>
+require_once "./src/Cadastro.php";
+
+$c = new Cadastro("crudpdo", "localhost", "root", "");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +14,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
     <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
     
 </head>
 <body>
@@ -30,7 +35,7 @@
                         <a class="nav-link" href="#" onclick="page('cadastro')" id="pg-cadastro">Cadastrar</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="page('registros')">Registros</a>
+                        <a class="nav-link" href="#" onclick="page('registros'); loadDoc()">Registros</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="#">Contato</a>
@@ -54,8 +59,7 @@
         <p style="margin-top: 10px;">Assim que você tiver preenchido todos os campos, a tupla será adicionada à página de registros. Você tem total liberdade para excluir ou editar qualquer registro da tabela, inclusive editar a data para conclusão. Qualquer dúvida ou sugestão que tiver, pode enviar uma mensagem na página de contato.</p>
         <button type="button" class="btn btn-primary" onclick="page('cadastro')">Iniciar</button>
     </main>
-
-
+    
     
 
     <script src="src/main.js"></script>

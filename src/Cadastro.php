@@ -1,6 +1,5 @@
 <?php
     Class Cadastro{
-
         private $pdo;
 
         public function __construct($dbname, $host, $user, $pass)
@@ -21,15 +20,11 @@
         public function buscarDados()
         {
             $res = array();
-            $cmd = $this->pdo->query("SELECT * FROM 'cadastros' ORDER BY 'id'");
+            $cmd = $this->pdo->query("SELECT * FROM cadastros ORDER BY id");
             $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
 
             return $res;
         }
 
-
     }
-
-
-
 ?>

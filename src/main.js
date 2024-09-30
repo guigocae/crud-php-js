@@ -1,4 +1,6 @@
 const viewContainer = document.querySelector("#view-container");
+
+
 const pageHome = `<h3>Olá Guilherme!</h3>
                     <p>Olá! Este será o seu ambiente para registrar tarefas a serem feitas ou concluídas</p>
                     <h5>Como Usar:</h5>
@@ -42,8 +44,24 @@ const pageCadastro = `<form action="">
                         </div>
                         </form>`;
 
-const pageRegistros = `<h3>Registros</h3>`
+const pageRegistros = `<table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Título</th>
+                                <th scope="col">Descrição</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Data Criação</th>
+                                <th scope="col">Data para Conclusão</th>
+                            </tr>
+                        </thead>
+                        <tbody class = "table-body">
+                            
+                        </tbody>
+                        </table>`
 
+
+
+    
 
 
 //seletor de paginas
@@ -77,3 +95,17 @@ function changeActiveClass(e)
   }
   e.target.classList.add('active');
 }
+
+//buscar dados no banco
+function loadDoc() {
+    var ajax = new XMLHttpRequest();
+    ajax.onreadystatechange = () => {
+        if(ajax.readyState == 4 && ajax.status == 200) {
+            document.querySelector(".table-body").innerHTML = ajax.responseText;
+        }
+    }
+    ajax.open("GET", "/src/getCadastro.php", true);
+    ajax.send();
+    
+}
+
